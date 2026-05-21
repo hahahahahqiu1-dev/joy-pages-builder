@@ -208,7 +208,7 @@ while (posts.length < 150) {
 }
 
 export const blogs: BlogPost[] = posts;
-export const blogMap = Object.fromEntries(blogs.map((b) => [b.slug, b]));
+export const blogMap: Record<string, BlogPost> = Object.fromEntries(blogs.map((b) => [b.slug, b]));
 export function blogsByCategory(cat: string): BlogPost[] {
   return blogs.filter((b) => b.category === cat);
 }
