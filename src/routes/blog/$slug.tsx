@@ -21,9 +21,9 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function BlogPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: BlogPost };
   const cat = categoryMap[post.category];
-  const relatedToolsList = post.relatedToolSlugs.map((s) => toolMap[s]).filter(Boolean);
+  const relatedToolsList = post.relatedToolSlugs.map((s: string) => toolMap[s]).filter(Boolean);
   const related = relatedBlogs(post.slug, 4);
   return (
     <Layout>
