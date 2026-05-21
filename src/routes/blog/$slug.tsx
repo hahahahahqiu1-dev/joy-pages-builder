@@ -44,7 +44,7 @@ function BlogPage() {
         </header>
 
         <div className="space-y-6">
-          {post.sections.map((s, i) => (
+          {post.sections.map((s: { heading: string; body: string }, i: number) => (
             <section key={i}>
               <h2 className="text-lg font-semibold tracking-tight">{s.heading}</h2>
               <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{s.body}</p>
