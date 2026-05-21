@@ -56,7 +56,7 @@ function BlogPage() {
           <section className="mt-10 rounded-2xl border border-border bg-card/60 p-5">
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Tools in this article</h2>
             <div className="grid gap-3 sm:grid-cols-2">
-              {relatedToolsList.map((t) => <ToolCard key={t.slug} tool={t} />)}
+              {relatedToolsList.map((t: any) => <ToolCard key={t.slug} tool={t} />)}
             </div>
           </section>
         )}
