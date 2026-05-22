@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { tools } from "@/data/tools";
 import { blogs } from "@/data/blogs";
 import { categories } from "@/data/categories";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
 
 export const Route = createFileRoute("/sitemap")({
   component: SitemapPage,
