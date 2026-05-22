@@ -5,6 +5,8 @@ import { blogsLinkingTool } from "@/data/blogs";
 import { categoryMap } from "@/data/categories";
 import { ToolCard, BlogCard } from "@/components/Cards";
 import { ToolRunner } from "@/components/ToolRunner";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
+
 
 export const Route = createFileRoute("/tools/$slug")({
   component: ToolPage,
