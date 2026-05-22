@@ -4,6 +4,7 @@ import { blogMap, relatedBlogs, type BlogPost } from "@/data/blogs";
 import { toolMap } from "@/data/tools";
 import { categoryMap } from "@/data/categories";
 import { ToolCard, BlogCard } from "@/components/Cards";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
 
 export const Route = createFileRoute("/blog/$slug")({
   component: BlogPage,
