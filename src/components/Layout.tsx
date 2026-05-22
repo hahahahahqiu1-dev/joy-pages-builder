@@ -74,38 +74,66 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        <div className="border-t border-border/60 bg-background/40">
-          <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted-foreground">
-            <h3 className="text-sm font-semibold text-foreground">
-              Powered by{" "}
+        <div className="border-t border-border/60 bg-card/60">
+          <div className="mx-auto max-w-6xl px-4 py-8 text-xs text-muted-foreground">
+            <h3 className="text-base font-semibold text-foreground">
+              You might also like:{" "}
               <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary underline-offset-4 hover:underline">
                 Textora.me
               </a>
             </h3>
             <p className="mt-2 leading-relaxed">
-              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">Textora.me</a>{" "}
-              is a free online text toolkit for writers, developers, students, and marketers — case
-              converters, word and character counters, text cleaners, encoders, formatters, and
-              dozens more utilities that run instantly in your browser. Utilihub is proudly built on
-              the same philosophy: simple, fast, privacy-friendly tools that just work. Explore the
-              full text toolkit at{" "}
-              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">textora.me</a>.
+              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">Textora.me</a> is a
+              free online text toolkit we recommend for anyone who works with words daily — writers, students,
+              developers, SEO marketers, and editors. Every tool runs instantly in your browser, requires no
+              sign-up, and never stores your text on a server.
             </p>
-            <p className="mt-3">
-              Quick links:{" "}
-              <a href="https://textora.me" target="_blank" rel="noopener" className="hover:text-primary">Textora Home</a>
-              {" · "}
-              <a href="https://textora.me/tools" target="_blank" rel="noopener" className="hover:text-primary">Textora Tools</a>
-              {" · "}
-              <a href="https://textora.me/blog" target="_blank" rel="noopener" className="hover:text-primary">Textora Blog</a>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+              <div>
+                <h4 className="text-xs font-semibold text-foreground">Popular Textora text tools</h4>
+                <ul className="mt-2 space-y-1">
+                  <li><a href="https://textora.me/word-counter" target="_blank" rel="noopener" className="hover:text-primary">Word & Character Counter</a></li>
+                  <li><a href="https://textora.me/case-converter" target="_blank" rel="noopener" className="hover:text-primary">Case Converter</a></li>
+                  <li><a href="https://textora.me/lorem-ipsum" target="_blank" rel="noopener" className="hover:text-primary">Lorem Ipsum Generator</a></li>
+                  <li><a href="https://textora.me/text-cleaner" target="_blank" rel="noopener" className="hover:text-primary">Text Cleaner</a></li>
+                  <li><a href="https://textora.me/remove-duplicates" target="_blank" rel="noopener" className="hover:text-primary">Remove Duplicate Lines</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs font-semibold text-foreground">Developer & formatters</h4>
+                <ul className="mt-2 space-y-1">
+                  <li><a href="https://textora.me/json-formatter" target="_blank" rel="noopener" className="hover:text-primary">JSON Formatter</a></li>
+                  <li><a href="https://textora.me/base64" target="_blank" rel="noopener" className="hover:text-primary">Base64 Encode / Decode</a></li>
+                  <li><a href="https://textora.me/url-encoder" target="_blank" rel="noopener" className="hover:text-primary">URL Encoder</a></li>
+                  <li><a href="https://textora.me/markdown-to-html" target="_blank" rel="noopener" className="hover:text-primary">Markdown to HTML</a></li>
+                  <li><a href="https://textora.me/slugify" target="_blank" rel="noopener" className="hover:text-primary">Slugify Text</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs font-semibold text-foreground">Explore Textora</h4>
+                <ul className="mt-2 space-y-1">
+                  <li><a href="https://textora.me" target="_blank" rel="noopener" className="hover:text-primary">Textora Home</a></li>
+                  <li><a href="https://textora.me/tools" target="_blank" rel="noopener" className="hover:text-primary">All Text Tools</a></li>
+                  <li><a href="https://textora.me/blog" target="_blank" rel="noopener" className="hover:text-primary">Writing & SEO Blog</a></li>
+                  <li><a href="https://textora.me/about" target="_blank" rel="noopener" className="hover:text-primary">About Textora</a></li>
+                  <li><a href="https://textora.me/contact" target="_blank" rel="noopener" className="hover:text-primary">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <p className="mt-4 leading-relaxed">
+              Suggested reading from Textora:{" "}
+              <a href="https://textora.me/blog/how-to-write-better-headlines" target="_blank" rel="noopener" className="text-primary hover:underline">How to write better headlines</a>,{" "}
+              <a href="https://textora.me/blog/seo-meta-description-guide" target="_blank" rel="noopener" className="text-primary hover:underline">SEO meta description guide</a>, and{" "}
+              <a href="https://textora.me/blog/markdown-cheatsheet" target="_blank" rel="noopener" className="text-primary hover:underline">Markdown cheatsheet</a>.
             </p>
           </div>
         </div>
 
         <div className="border-t border-border/60 px-4 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Utilihub · A companion project to{" "}
-          <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">textora.me</a>.
-          All tools run locally in your browser.
+          © {new Date().getFullYear()} Utilihub · All tools run locally in your browser · Visit{" "}
+          <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">textora.me</a> for free text tools.
         </div>
       </footer>
     </div>
