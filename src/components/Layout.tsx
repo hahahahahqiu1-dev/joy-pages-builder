@@ -74,7 +74,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="border-t border-border/60 px-4 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Utilihub. All tools run locally in your browser.
+          © {new Date().getFullYear()} Utilihub. All tools run locally in your browser. <a href="https://textora.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">textora.me</a>
         </div>
       </footer>
     </div>
