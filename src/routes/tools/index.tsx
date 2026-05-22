@@ -4,6 +4,7 @@ import { Layout } from "@/components/Layout";
 import { tools } from "@/data/tools";
 import { categories } from "@/data/categories";
 import { ToolCard } from "@/components/Cards";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
 
 export const Route = createFileRoute("/tools/")({
   component: ToolsIndex,

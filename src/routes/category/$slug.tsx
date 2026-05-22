@@ -4,6 +4,7 @@ import { categoryMap } from "@/data/categories";
 import { toolsByCategory } from "@/data/tools";
 import { blogsByCategory } from "@/data/blogs";
 import { ToolCard, BlogCard, SectionTitle } from "@/components/Cards";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
 
 export const Route = createFileRoute("/category/$slug")({
   component: CategoryPage,
