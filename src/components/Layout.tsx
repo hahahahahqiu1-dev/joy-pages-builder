@@ -73,8 +73,39 @@ export function Layout({ children }: { children: ReactNode }) {
             </ul>
           </div>
         </div>
+
+        <div className="border-t border-border/60 bg-background/40">
+          <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted-foreground">
+            <h3 className="text-sm font-semibold text-foreground">
+              Powered by{" "}
+              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary underline-offset-4 hover:underline">
+                Textora.me
+              </a>
+            </h3>
+            <p className="mt-2 leading-relaxed">
+              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">Textora.me</a>{" "}
+              is a free online text toolkit for writers, developers, students, and marketers — case
+              converters, word and character counters, text cleaners, encoders, formatters, and
+              dozens more utilities that run instantly in your browser. Utilihub is proudly built on
+              the same philosophy: simple, fast, privacy-friendly tools that just work. Explore the
+              full text toolkit at{" "}
+              <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">textora.me</a>.
+            </p>
+            <p className="mt-3">
+              Quick links:{" "}
+              <a href="https://textora.me" target="_blank" rel="noopener" className="hover:text-primary">Textora Home</a>
+              {" · "}
+              <a href="https://textora.me/tools" target="_blank" rel="noopener" className="hover:text-primary">Textora Tools</a>
+              {" · "}
+              <a href="https://textora.me/blog" target="_blank" rel="noopener" className="hover:text-primary">Textora Blog</a>
+            </p>
+          </div>
+        </div>
+
         <div className="border-t border-border/60 px-4 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Utilihub. All tools run locally in your browser. <a href="https://textora.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">textora.me</a>
+          © {new Date().getFullYear()} Utilihub · A companion project to{" "}
+          <a href="https://textora.me" target="_blank" rel="noopener" className="text-primary hover:underline">textora.me</a>.
+          All tools run locally in your browser.
         </div>
       </footer>
     </div>
