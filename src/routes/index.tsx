@@ -60,19 +60,28 @@ function Index() {
         </div>
       </section>
 
-      <section className="mt-12">
-        <SectionTitle title="Popular tools" href="/tools" />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredTools.map((t) => <ToolCard key={t.slug} tool={t} />)}
-        </div>
-      </section>
+      <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_280px]">
+        <div className="space-y-12">
+          <section>
+            <SectionTitle title="Popular tools" href="/tools" />
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredTools.map((t) => <ToolCard key={t.slug} tool={t} />)}
+            </div>
+          </section>
 
-      <section className="mt-12">
-        <SectionTitle title="From the blog" href="/blog" />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {latestBlogs.map((b) => <BlogCard key={b.slug} post={b} />)}
+          <section>
+            <SectionTitle title="From the blog" href="/blog" />
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {latestBlogs.map((b) => <BlogCard key={b.slug} post={b} />)}
+            </div>
+          </section>
         </div>
-      </section>
+
+        <div className="space-y-6">
+          <TextoraSidebar />
+        </div>
+      </div>
     </Layout>
   );
 }
+
