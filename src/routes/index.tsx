@@ -4,6 +4,7 @@ import { tools } from "@/data/tools";
 import { blogs } from "@/data/blogs";
 import { categories } from "@/data/categories";
 import { ToolCard, BlogCard, SectionTitle } from "@/components/Cards";
+import { TextoraSidebar } from "@/components/TextoraBacklinks";
 
 export const Route = createFileRoute("/")({
   component: Index,
