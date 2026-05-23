@@ -3,8 +3,6 @@ import { tools } from "@/data/tools";
 import { blogs } from "@/data/blogs";
 import { categories } from "@/data/categories";
 
-const BASE_URL = "https://id-preview--e3a8a5e1-868d-4466-b81e-6833315e802d.lovable.app";
-
 interface SitemapEntry {
   path: string;
   changefreq?: string;
@@ -14,7 +12,8 @@ interface SitemapEntry {
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async (ctx) => {
+        const BASE_URL = getBaseUrl(ctx.request);
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/tools", changefreq: "weekly", priority: "0.9" },
@@ -75,3 +74,8 @@ export const Route = createFileRoute("/sitemap.xml")({
     },
   },
 });
+
+function getBaseUrl(request: Request): string {
+  const url = new URL(request.url);
+  return `${url.protocol}//${url.host}`;
+}

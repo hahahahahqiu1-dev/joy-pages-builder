@@ -18,6 +18,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsIndexRouteImport } from './routes/tools/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as ToolsSlugRouteImport } from './routes/tools/$slug'
+import { Route as RobotsTxtRouteImport } from './routes/robots.txt'
 import { Route as CategorySlugRouteImport } from './routes/category/$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
@@ -66,6 +67,11 @@ const ToolsSlugRoute = ToolsSlugRouteImport.update({
   path: '/tools/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsTxtRoute = RobotsTxtRouteImport.update({
+  id: '/robots/txt',
+  path: '/robots/txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategorySlugRoute = CategorySlugRouteImport.update({
   id: '/category/$slug',
   path: '/category/$slug',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/robots/txt': typeof RobotsTxtRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tools/': typeof ToolsIndexRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/robots/txt': typeof RobotsTxtRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/blog': typeof BlogIndexRoute
   '/tools': typeof ToolsIndexRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$slug': typeof CategorySlugRoute
+  '/robots/txt': typeof RobotsTxtRoute
   '/tools/$slug': typeof ToolsSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/tools/': typeof ToolsIndexRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/robots/txt'
     | '/tools/$slug'
     | '/blog/'
     | '/tools/'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/robots/txt'
     | '/tools/$slug'
     | '/blog'
     | '/tools'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/blog/$slug'
     | '/category/$slug'
+    | '/robots/txt'
     | '/tools/$slug'
     | '/blog/'
     | '/tools/'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CategorySlugRoute: typeof CategorySlugRoute
+  RobotsTxtRoute: typeof RobotsTxtRoute
   ToolsSlugRoute: typeof ToolsSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ToolsIndexRoute: typeof ToolsIndexRoute
@@ -238,6 +251,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ToolsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots/txt': {
+      id: '/robots/txt'
+      path: '/robots/txt'
+      fullPath: '/robots/txt'
+      preLoaderRoute: typeof RobotsTxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$slug': {
       id: '/category/$slug'
       path: '/category/$slug'
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   CategorySlugRoute: CategorySlugRoute,
+  RobotsTxtRoute: RobotsTxtRoute,
   ToolsSlugRoute: ToolsSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ToolsIndexRoute: ToolsIndexRoute,

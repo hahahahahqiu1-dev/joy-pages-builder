@@ -13,16 +13,28 @@ import { join } from "path";
 export default defineConfig({
   vite: {
     base: process.env.BASE_PATH || "/",
+    publicDir: "public",
     plugins: [
       {
         name: "generate-static-index",
         apply: "build",
         enforce: "post",
         async closeBundle() {
+          const distClientPath = join("dist", "client");
+
+          // Copy robots.txt to dist if it exists
+          try {
+            const robotsPath = join("public", "robots.txt");
+            const robotsContent = readFileSync(robotsPath, "utf-8");
+            writeFileSync(join(distClientPath, "robots.txt"), robotsContent);
+            console.log("✓ Copied robots.txt to dist");
+          } catch {
+            console.log("ℹ robots.txt not found in public folder");
+          }
+
           // For GitHub Pages, create a minimal index.html and 404.html as SPA fallback
           if (process.env.GITHUB_PAGES === "true") {
             const basePath = process.env.BASE_PATH || "/";
-            const distClientPath = join("dist", "client");
 
             const indexHtml = `<!DOCTYPE html>
 <html lang="en">
