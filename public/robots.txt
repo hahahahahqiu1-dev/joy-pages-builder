@@ -1,3 +1,18 @@
 User-agent: *
 Allow: /
-Sitemap: https://id-preview--e3a8a5e1-868d-4466-b81e-6833315e802d.lovable.app/sitemap.xml
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /?*sort=
+Disallow: /?*filter=
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: /sitemap.xml

@@ -75,16 +75,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Utilihub — 150+ Free Everyday Tools" },
       { name: "description", content: "Utilihub is a collection of 150+ free, fast, offline-friendly everyday utilities — text tools, converters, calculators, generators, and more." },
       { name: "author", content: "Utilihub" },
+      { name: "keywords", content: "tools, text converter, calculator, generator, utilities, online tools, free tools" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "Utilihub — 150+ Free Everyday Tools" },
       { property: "og:description", content: "Free, fast, offline-friendly everyday utilities — text tools, converters, calculators, generators, and more." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:url", content: "https://utilihub.vercel.app" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Utilihub" },
+      { name: "twitter:title", content: "Utilihub — 150+ Free Everyday Tools" },
+      { name: "twitter:description", content: "Free, fast, offline-friendly everyday utilities — text tools, converters, calculators, generators, and more." },
+      { name: "theme-color", content: "#000000" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "canonical",
+        href: "https://utilihub.vercel.app",
+      },
+      {
+        rel: "sitemap",
+        href: "/sitemap.xml",
       },
     ],
   }),
@@ -95,10 +112,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Utilihub",
+    description: "A collection of 150+ free, fast, offline-friendly everyday utilities",
+    url: "https://utilihub.vercel.app",
+    applicationCategory: "UtilityApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD"
+    }
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         {children}
