@@ -39,10 +39,16 @@ const textoraExploreLinks: TextoraLink[] = [
   { label: "Contact", href: "https://textora.me/contact" },
 ];
 
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 function shuffle<T>(arr: T[], count: number): T[] {
+  const today = Math.floor(new Date().getTime() / (1000 * 60 * 60 * 24));
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(seededRandom(today + i) * (i + 1));
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy.slice(0, count);
